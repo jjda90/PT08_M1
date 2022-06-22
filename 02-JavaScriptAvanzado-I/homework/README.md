@@ -29,34 +29,43 @@ console.log(b);
 console.log(x);
 ```
 
+
+
 ```javascript
-console.log(bar);
-console.log(baz);
+console.log(bar); // undefined sube la declaracion var bar sin valor definido (Hoisting)
+console.log(baz); // error, como no tiene la declaracion
 foo();
 function foo() { console.log('Hola!'); }
 var bar = 1;
 baz = 2;
 ```
 
+
+
 ```javascript
-var instructor = "Tony";
+var instructor = "Tony";  // la defino en el contexto global
 if(true) {
-    var instructor = "Franco";
+    var instructor = "Franco";  //  la defino en el scope del if pero pisa a la del scope gral, 
+   //                               si uso let, solo queda entre las llaves {}
 }
 console.log(instructor);
 ```
 
+
+
 ```javascript
 var instructor = "Tony";
-console.log(instructor);
-(function() {
+console.log(instructor);      // Tony
+(function() {                 // IIFE
    if(true) {
-      var instructor = "Franco";
+      var instructor = "Franco";    // Franco
       console.log(instructor);
    }
 })();
-console.log(instructor);
+console.log(instructor);            // Tony
 ```
+
+
 
 ```javascript
 var instructor = "Tony";
