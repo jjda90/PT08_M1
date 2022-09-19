@@ -10,6 +10,12 @@ describe('Integer numbers', () => {
   });
 });
 
+
+
+
+
+
+
 describe('Decimal numbers', () => {
   it('should return 8.33 if adding 3.32 and 5.01', () => {
     expect(sum(3.32, 5.01)).toBe(8.33);
@@ -20,7 +26,13 @@ describe('Decimal numbers', () => {
   });
 });
 
-describe.only('Invalid inputs', () => {
+
+
+
+
+
+
+describe.only('Invalid inputs', () => {    // describe.only --> SOLO ME CORRE ESE TEST, ESKIPEA EL RESTO
   it('should throw an TypeError if first parameter is not a number', () => {
     expect(() => sum('Franco', 5)).toThrow(TypeError);
   });
